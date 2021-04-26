@@ -72,6 +72,17 @@
             emailError.textContent = "";
             else emailError.textContent = "Email Id is Incorrect";
         });
+        
+        const tel = document.querySelector('#tel');
+        const telError = document.querySelector('.tel-error');
+        tel.addEventListener('input', function() {
+            let telRegex = RegExp('((91){1})[ ]([98765]{1})([0-9]{9})$');
+            if (telRegex.test(tel.value))
+            telError.textContent = "";
+            else telError.textContent = "Mobile Number is Incorrect";
+        });
+
+
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
             output.textContent = salary.value;
