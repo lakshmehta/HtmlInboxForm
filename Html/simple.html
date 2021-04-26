@@ -72,7 +72,7 @@
             emailError.textContent = "";
             else emailError.textContent = "Email Id is Incorrect";
         });
-        
+
         const tel = document.querySelector('#tel');
         const telError = document.querySelector('.tel-error');
         tel.addEventListener('input', function() {
@@ -82,7 +82,14 @@
             else telError.textContent = "Mobile Number is Incorrect";
         });
 
-
+        const pwd = document.querySelector('#pwd');
+        const pwdError = document.querySelector('.pwd-error');
+        pwd.addEventListener('input', function() {
+            let pwdRegex = RegExp('[a-zA-z]{8,32}$');
+            if (pwdRegex.test(pwd.value))
+            pwdError.textContent = "";
+            else pwdError.textContent = "Password is Incorrect";
+        });
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
             output.textContent = salary.value;
